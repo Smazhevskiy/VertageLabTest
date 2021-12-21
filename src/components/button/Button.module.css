@@ -1,0 +1,8 @@
+s.default {
+	background-color: var(--primary);
+}
+
+
+.grouped {
+	flex-grow: 1;
+}

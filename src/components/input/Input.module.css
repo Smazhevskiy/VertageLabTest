@@ -1,0 +1,19 @@
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.errorInput {
+	border-color: red;
+}
+
+.errorInput:focus {
+	border-color: red;
+}
+
+.error {
+	color: red;
+}
+
