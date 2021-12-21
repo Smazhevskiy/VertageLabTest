@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/VertageLabTest/static/css/main.c0a0c788.css",
+    "main.js": "/VertageLabTest/static/js/main.118d5e77.js",
+    "static/js/787.cfd8f164.chunk.js": "/VertageLabTest/static/js/787.cfd8f164.chunk.js",
+    "index.html": "/VertageLabTest/index.html",
+    "main.c0a0c788.css.map": "/VertageLabTest/static/css/main.c0a0c788.css.map",
+    "main.118d5e77.js.map": "/VertageLabTest/static/js/main.118d5e77.js.map",
+    "787.cfd8f164.chunk.js.map": "/VertageLabTest/static/js/787.cfd8f164.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0a0c788.css",
+    "static/js/main.118d5e77.js"
+  ]
+}
