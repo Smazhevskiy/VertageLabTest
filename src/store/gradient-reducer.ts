@@ -1,21 +1,38 @@
+import {GradientType} from '../pages/Home/Home'
+
+
 enum GRADIENT_ACTIONS_TYPES {
-    SET_APP_IS_LOADING = 'SET_APP_IS_LOADING'
+    SET_GRADIENTS = 'SET_GRADIENTS',
+    ADD_NEW_GRADIENT = 'ADD_NEW_GRADIENT',
+    REMOVE_GRADIENT = 'REMOVE_GRADIENT',
+    EDIT_GRADIENT_COLOR = 'EDIT_GRADIENT_COLOR',
 }
 
-type AppActions = | ReturnType<typeof setAppIsLoading>
+type AppActions =
+    | ReturnType<typeof setGradients>
+    | ReturnType<typeof addNewGradient>
+    | ReturnType<typeof removeGradient>
+    | ReturnType<typeof editGradientColor>
 
 
-export type GradientInitialState = {
-    isError: boolean
-}
+const initialState: Array<GradientType> = []
 
-const initialState: GradientInitialState = {
-    isError: false,
-}
-
-
-export const gradientReducer = (state = initialState, action: AppActions): GradientInitialState => {
+export const gradientReducer = (state = initialState, action: AppActions): Array<GradientType> => {
     switch (action.type) {
+        case GRADIENT_ACTIONS_TYPES.SET_GRADIENTS:
+            return [...state, ...action.payload]
+        case GRADIENT_ACTIONS_TYPES.ADD_NEW_GRADIENT:
+            return [{id: action.payload.id, color1: action.payload.color1, color2: action.payload.color2}, ...state]
+        case GRADIENT_ACTIONS_TYPES.REMOVE_GRADIENT:
+            return state.filter(gr => gr.id !== action.id)
+        case GRADIENT_ACTIONS_TYPES.EDIT_GRADIENT_COLOR: {
+            const gradient = state.find(tl => tl.id === action.payload.id)
+            if (gradient) {
+                gradient.color1 = action.payload.color1
+                gradient.color2 = action.payload.color2
+            }
+            return [...state]
+        }
 
         default:
             return state
@@ -23,7 +40,23 @@ export const gradientReducer = (state = initialState, action: AppActions): Gradi
 }
 
 //ACTIONS
-export const setAppIsLoading = (status: boolean) => ({
-    type: GRADIENT_ACTIONS_TYPES.SET_APP_IS_LOADING,
-    payload: {status}
+export const setGradients = (payload: Array<GradientType>) => ({
+    type: GRADIENT_ACTIONS_TYPES.SET_GRADIENTS,
+    payload
 } as const)
+
+export const addNewGradient = (payload: GradientType) => ({
+    type: GRADIENT_ACTIONS_TYPES.ADD_NEW_GRADIENT,
+    payload
+} as const)
+
+export const removeGradient = (id: string) => ({
+    type: GRADIENT_ACTIONS_TYPES.REMOVE_GRADIENT,
+    id
+} as const)
+
+export const editGradientColor = (payload: GradientType) => ({
+    type: GRADIENT_ACTIONS_TYPES.EDIT_GRADIENT_COLOR,
+    payload
+} as const)
+

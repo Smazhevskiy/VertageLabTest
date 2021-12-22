@@ -1,0 +1,37 @@
+.gradient {
+	width: 40rem;
+	height: 6rem;
+	background: #ab9292;
+	display: flex;
+	flex-direction: column;
+	margin: 2rem 0;
+}
+
+.container {
+	flex: 1 1 33.333%;
+}
+
+.colorsText {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+	position: relative;
+}
+
+.del {
+	cursor: pointer;
+	background: #efe4e4;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50px;
+	color: black;
+	position: absolute;
+	top:-9px;
+	right: -9px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}

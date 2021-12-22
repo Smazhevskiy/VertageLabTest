@@ -1,5 +1,5 @@
 :root {
-  --primary: cornflowerblue;
+  --primary: #7f829b;
   --dark: #333;
   --light: whitesmoke;
   --darkLight: #555;
@@ -62,7 +62,7 @@ button:hover {
 }
 
 button:disabled {
-  opacity: 0.4;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
