@@ -10,6 +10,8 @@ export type GradientType = {
 
 }
 
+
+
 export const Home = () => {
     const gradients = useTypedSelector(state => state.gradient)
 

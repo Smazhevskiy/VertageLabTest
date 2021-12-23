@@ -1,3 +1,35 @@
-.edit{
+.edit {
+	width: 36rem;
 
 }
+
+.bgContainer {
+	height: 8rem;
+}
+
+.inputsBlock {
+	display: flex;
+	justify-content: space-between;
+}
+
+.colorsText {
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+	position: relative;
+	top: 50%;
+	margin: 0 2rem;
+	padding: 0 -2rem;
+}
+
+.btnBlock {
+	display: flex;
+	justify-content: center;
+}
+
+.edit button {
+	background: #42bb53;
+	width: 60%;
+	font-size: 1.2rem;
+}
+

@@ -16,5 +16,5 @@ export const Button: FC<ButtonProps> = props => {
     const {secondary, className, grouped, disabled, ...restProps} = props
     const classNames = `${secondary ? s.secondary : ''}${grouped ? s.grouped : ''}${className ? className : ''}`
 
-    return <button className={classNames} disabled={disabled} {...restProps}/>
+    return <button className={classNames} disabled={disabled}  {...restProps}/>
 }

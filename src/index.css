@@ -51,7 +51,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   min-height: 40px;
-  background-color: var(--primary);
+  background-color: #4587b9;
   color: var(--light);
 }
 

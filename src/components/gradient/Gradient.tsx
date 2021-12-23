@@ -2,6 +2,7 @@ import React from 'react'
 import s from './Gradient.module.css'
 import {useDispatch} from 'react-redux'
 import {removeGradient} from '../../store/gradient-reducer'
+import { Link } from 'react-router-dom'
 
 type GradientType = {
     id: string
@@ -25,9 +26,9 @@ export const Gradient = (props: GradientType) => {
                     <h4>{color1}</h4>
                     <h4>{color2}</h4>
                    <span onClick={removeGradientHandler} className={s.del}>X</span>
+                   <Link to={`edit/${id}`}>EDIT</Link>
                 </div>
             </div>
-
         </div>
     )
 }
