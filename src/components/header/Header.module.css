@@ -1,26 +1,13 @@
 .header {
-	background: var(--darkLight);
-	margin: 1rem 0;
-	min-height: 8rem;
-	border-radius: 5px;
-}
-
-
-.inputsBlock {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	gap: 1.5rem;
-	padding: 10px 15px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	background: var(--dark);
+	height: 5rem;
 }
-
-.inputBody {
-	width: 15rem;
-}
-
 
 .header button {
-	display: block;
-	margin: 10px auto;
-	width: 80%;
+	height: 70%;
+	width: 60%;
 }
