@@ -1,14 +1,16 @@
 .gradient {
-	width: 40rem;
+	width: 36rem;
 	height: 6rem;
 	background: #ab9292;
 	display: flex;
 	flex-direction: column;
-	margin: 2rem 0;
+	margin: 2rem 1rem;
+	background: var(--dark);
 }
 
 .container {
 	flex: 1 1 33.333%;
+	border-radius: 7px;
 }
 
 .colorsText {

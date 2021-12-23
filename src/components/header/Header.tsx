@@ -22,16 +22,20 @@ export const Header = () => {
     return (
         <div className={s.header}>
             <div className={s.inputsBlock}>
-                <Input
-                    value={color1}
-                    placeholder={'введите hex-code цвета'}
-                    onChange={onChangeInput1Handler}
-                />
-                <Input
-                    value={color2}
-                    placeholder={'введите hex-code цвета'}
-                    onChange={onChangeInput2Handler}
-                />
+                <div className={s.inputBody}>
+                    <Input
+                        value={color1}
+                        placeholder={'введите hex-code цвета'}
+                        onChange={onChangeInput1Handler}
+                    />
+                </div>
+                <div className={s.inputBody}>
+                    <Input
+                        value={color2}
+                        placeholder={'введите hex-code цвета'}
+                        onChange={onChangeInput2Handler}
+                    />
+                </div>
             </div>
             <Button onClick={clickButtonHandler}>Создать</Button>
         </div>

@@ -1,5 +1,5 @@
 :root {
-  --primary: #7f829b;
+  --primary: #8b95d5;
   --dark: #333;
   --light: whitesmoke;
   --darkLight: #555;
@@ -34,8 +34,6 @@ body {
   background-color: var(--dark);
   color: var(--light);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
 }
 
 code {

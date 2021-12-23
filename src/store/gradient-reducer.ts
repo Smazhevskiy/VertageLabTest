@@ -1,4 +1,5 @@
 import {GradientType} from '../pages/Home/Home'
+import {v4} from 'uuid'
 
 
 enum GRADIENT_ACTIONS_TYPES {
@@ -15,7 +16,12 @@ type AppActions =
     | ReturnType<typeof editGradientColor>
 
 
-const initialState: Array<GradientType> = []
+const initialState: Array<GradientType> = [
+    {id: v4(), color1: '#7FFF00', color2: '#FF4500'},
+    {id: v4(), color1: '#008080', color2: '#FFA07A'},
+    {id: v4(), color1: '#004080', color2: '#FF507A'},
+
+]
 
 export const gradientReducer = (state = initialState, action: AppActions): Array<GradientType> => {
     switch (action.type) {
@@ -26,7 +32,7 @@ export const gradientReducer = (state = initialState, action: AppActions): Array
         case GRADIENT_ACTIONS_TYPES.REMOVE_GRADIENT:
             return state.filter(gr => gr.id !== action.id)
         case GRADIENT_ACTIONS_TYPES.EDIT_GRADIENT_COLOR: {
-            const gradient = state.find(tl => tl.id === action.payload.id)
+            const gradient = state.find(gr => gr.id === action.payload.id)
             if (gradient) {
                 gradient.color1 = action.payload.color1
                 gradient.color2 = action.payload.color2
