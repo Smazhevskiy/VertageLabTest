@@ -28,6 +28,8 @@ export const AddNewColorModal: FC<AddColorModalProps> = ({buttonDisable}) => {
     const clickButtonHandler = () => {
         dispatch(addNewGradient({id: v4(), color1, color2}))
         onToggle()
+        setColor1('')
+        setColor2('')
     }
 
 

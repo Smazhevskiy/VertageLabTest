@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react'
+import React, {ChangeEvent, useEffect, useState} from 'react'
 import s from './EditGradient.module.css'
 import {useDispatch} from 'react-redux'
 import {Redirect, useParams} from 'react-router-dom'
@@ -7,10 +7,18 @@ import {Input} from '../../components/input/Input'
 import {Button} from '../../components/button/Button'
 import {editGradientColor} from '../../store/gradient-reducer'
 import {PATH} from '../../components/routes/pathRoutes'
+import {setShowHeader} from '../../store/app-reducer'
 
 
 export const EditGradient = () => {
     const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        dispatch(setShowHeader(false))
+    },[dispatch])
+
+
     const {id} = useParams<{ id: string }>()
     const allGradients = useTypedSelector(state => state.gradient)
     const gradient = allGradients.find(gr => gr.id === id)
@@ -36,7 +44,9 @@ export const EditGradient = () => {
         setDone(true)
     }
 
-    if (done) return <Redirect to={PATH.HOME}/>
+    if (done) {
+        return <Redirect to={PATH.HOME}/>
+    }
 
 
     return (

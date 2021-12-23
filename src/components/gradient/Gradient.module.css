@@ -37,3 +37,14 @@
 	align-items: center;
 	font-weight: bold;
 }
+
+.del:hover {
+	background: red;
+	transition: 0.3s;
+}
+
+.editLink {
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
+}
