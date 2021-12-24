@@ -9,7 +9,7 @@ type AppActions =
     | ReturnType<typeof setAppInfo>
     | ReturnType<typeof setShowHeader>
 
-type AppInitialState = {
+export type AppInitialState = {
     showHeader: boolean
     error: string
     info: string

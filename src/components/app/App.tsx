@@ -8,7 +8,6 @@ import {Alerts} from '../Alerts/Alerts'
 
 function App() {
     const {showHeader} = useTypedSelector(state => state.app)
-
     return (
         <div className={s.app}>
             <div className={s.container}>

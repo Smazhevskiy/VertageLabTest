@@ -14,7 +14,7 @@ let startState: Array<GradientType> = [
 ]
 
 
-describe('Cards reducer', () => {
+describe('Gradients colors reducer', () => {
     it('Gradient color should be added', () => {
         const action = addNewGradient({id: '12345f', color1: '#fff', color2: 'ff0000'})
 

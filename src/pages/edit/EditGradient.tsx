@@ -27,7 +27,6 @@ export const EditGradient = () => {
     let bgColor1 = gradient ? gradient.color1 : 'red'
     let bgColor2 = gradient ? gradient.color2 : 'blue'
 
-    console.log(gradient)
     let [color1, setColor1] = useState(bgColor1)
     let [color2, setColor2] = useState(bgColor2)
     const [done, setDone] = useState(false)
@@ -42,7 +41,7 @@ export const EditGradient = () => {
 
     const setColorsHandler = () => {
         if (validateHex(color1) && validateHex(color2)) {
-            dispatch(setAppInfo('Цвет был изменён'))
+            dispatch(setAppInfo('Изменения сохранены'))
             dispatch(editGradientColor({id, color1, color2}))
             setDone(true)
         } else {
@@ -78,7 +77,6 @@ export const EditGradient = () => {
                     <h4>{color2}</h4>
                 </div>
             </div>
-
         </div>
     )
 }

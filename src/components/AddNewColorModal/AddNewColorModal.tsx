@@ -5,7 +5,7 @@ import {Button} from '../button/Button'
 import {Modal} from '../modal/Modal'
 import {Input} from '../input/Input'
 import {addNewGradient} from '../../store/gradient-reducer'
-import {v4, validate} from 'uuid'
+import {v4} from 'uuid'
 import s from './AddNewColorModal.module.css'
 import {setAppError, setAppInfo} from '../../store/app-reducer'
 import {validateHex} from '../../hooks/useValidation'
@@ -36,7 +36,6 @@ export const AddNewColorModal: FC<AddColorModalProps> = ({buttonDisable}) => {
         } else {
             return dispatch(setAppError('Введите корректный hex-code'))
         }
-
     }
 
 
