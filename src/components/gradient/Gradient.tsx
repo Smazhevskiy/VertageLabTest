@@ -3,6 +3,8 @@ import s from './Gradient.module.css'
 import {useDispatch} from 'react-redux'
 import {removeGradient} from '../../store/gradient-reducer'
 import {Link} from 'react-router-dom'
+import {setAppInfo} from '../../store/app-reducer'
+import {validateHex} from '../../hooks/useValidation'
 
 type GradientType = {
     id: string
@@ -16,7 +18,8 @@ export const Gradient = (props: GradientType) => {
     const {id, color1, color2} = props
 
     const removeGradientHandler = () => {
-        dispatch(removeGradient(id))
+            dispatch(setAppInfo('Успешно удалено'))
+            dispatch(removeGradient(id))
     }
 
     return (

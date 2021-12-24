@@ -7,7 +7,8 @@ import {Input} from '../../components/input/Input'
 import {Button} from '../../components/button/Button'
 import {editGradientColor} from '../../store/gradient-reducer'
 import {PATH} from '../../components/routes/pathRoutes'
-import {setShowHeader} from '../../store/app-reducer'
+import {setAppError, setAppInfo, setShowHeader} from '../../store/app-reducer'
+import {validateHex} from '../../hooks/useValidation'
 
 
 export const EditGradient = () => {
@@ -16,7 +17,7 @@ export const EditGradient = () => {
 
     useEffect(() => {
         dispatch(setShowHeader(false))
-    },[dispatch])
+    }, [dispatch])
 
 
     const {id} = useParams<{ id: string }>()
@@ -40,8 +41,13 @@ export const EditGradient = () => {
     }
 
     const setColorsHandler = () => {
-        dispatch(editGradientColor({id, color1, color2}))
-        setDone(true)
+        if (validateHex(color1) && validateHex(color2)) {
+            dispatch(setAppInfo('Цвет был изменён'))
+            dispatch(editGradientColor({id, color1, color2}))
+            setDone(true)
+        } else {
+            dispatch(setAppError('Введите корректный hex-code'))
+        }
     }
 
     if (done) {

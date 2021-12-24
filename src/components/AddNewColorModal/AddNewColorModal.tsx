@@ -5,13 +5,14 @@ import {Button} from '../button/Button'
 import {Modal} from '../modal/Modal'
 import {Input} from '../input/Input'
 import {addNewGradient} from '../../store/gradient-reducer'
-import {v4} from 'uuid'
+import {v4, validate} from 'uuid'
 import s from './AddNewColorModal.module.css'
+import {setAppError, setAppInfo} from '../../store/app-reducer'
+import {validateHex} from '../../hooks/useValidation'
 
 type AddColorModalProps = {
     buttonDisable: boolean
 }
-
 
 
 export const AddNewColorModal: FC<AddColorModalProps> = ({buttonDisable}) => {
@@ -26,16 +27,22 @@ export const AddNewColorModal: FC<AddColorModalProps> = ({buttonDisable}) => {
     const onChangeInput2Handler = (e: ChangeEvent<HTMLInputElement>) => setColor2(e.currentTarget.value)
 
     const clickButtonHandler = () => {
-        dispatch(addNewGradient({id: v4(), color1, color2}))
-        onToggle()
-        setColor1('')
-        setColor2('')
+        if (validateHex(color1) && validateHex(color2)) {
+            dispatch(setAppInfo('Успешно добавлен'))
+            dispatch(addNewGradient({id: v4(), color1, color2}))
+            onToggle()
+            setColor1('')
+            setColor2('')
+        } else {
+            return dispatch(setAppError('Введите корректный hex-code'))
+        }
+
     }
 
 
     return (
         <>
-            <Button  onClick={()=> onToggle()} disabled={buttonDisable}>Add new
+            <Button onClick={() => onToggle()} disabled={buttonDisable}>Add new
                 color</Button>
 
             <Modal open={isOpen} onClick={() => onToggle()}>
