@@ -6,6 +6,7 @@
 }
 
 .container {
+	width: 40rem;
 	background: var(--dark);
 	display: grid;
 	gap: 1.8rem;
