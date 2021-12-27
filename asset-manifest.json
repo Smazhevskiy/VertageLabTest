@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/VertageLabTest/static/css/main.0a2bd968.css",
+    "main.css": "/VertageLabTest/static/css/main.c92c419d.css",
     "main.js": "/VertageLabTest/static/js/main.498b2eb5.js",
     "static/js/787.cfd8f164.chunk.js": "/VertageLabTest/static/js/787.cfd8f164.chunk.js",
     "index.html": "/VertageLabTest/index.html",
-    "main.0a2bd968.css.map": "/VertageLabTest/static/css/main.0a2bd968.css.map",
+    "main.c92c419d.css.map": "/VertageLabTest/static/css/main.c92c419d.css.map",
     "main.498b2eb5.js.map": "/VertageLabTest/static/js/main.498b2eb5.js.map",
     "787.cfd8f164.chunk.js.map": "/VertageLabTest/static/js/787.cfd8f164.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a2bd968.css",
+    "static/css/main.c92c419d.css",
     "static/js/main.498b2eb5.js"
   ]
 }
